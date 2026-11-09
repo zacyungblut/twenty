@@ -36,11 +36,11 @@ import { AuthRestApiExceptionFilter } from 'src/engine/core-modules/auth/filters
 @Controller([`${ApiPath.Rest}/webhooks`, `${ApiPath.Rest}/metadata/webhooks`])
 @UseGuards(JwtAuthGuard)
 @UseFilters(
-  PermissionsRestApiExceptionFilter,
   RestApiExceptionFilter,
   FlatEntityMapsRestApiExceptionFilter,
   WorkspaceMigrationRunnerRestApiExceptionFilter,
   AuthRestApiExceptionFilter,
+  PermissionsRestApiExceptionFilter,
 )
 export class WebhookController {
   constructor(private readonly webhookService: WebhookService) {}
