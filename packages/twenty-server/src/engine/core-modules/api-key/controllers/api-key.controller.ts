@@ -36,9 +36,9 @@ import { AccessPolicyGuard } from 'src/engine/guards/access-policy.guard';
 @Controller([`${ApiPath.Rest}/apiKeys`, `${ApiPath.Rest}/metadata/apiKeys`])
 @UseGuards(JwtAuthGuard)
 @UseFilters(
-  PermissionsRestApiExceptionFilter,
   RestApiExceptionFilter,
   AuthRestApiExceptionFilter,
+  PermissionsRestApiExceptionFilter,
 )
 export class ApiKeyController {
   constructor(private readonly apiKeyService: ApiKeyService) {}
